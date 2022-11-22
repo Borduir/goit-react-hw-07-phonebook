@@ -1,19 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-// import { contactsReducer } from '../redux/contactsSlice';
-import { fetchContacts } from '../redux/operations';
 import { useEffect } from 'react';
-import { addContact } from '../redux/operations';
 
 import Form from './Form/Form';
 import Filtre from './Filtre/Filtre';
 import ContactList from './ContactList/ContactList';
+import { fetchContacts } from '../redux/operations';
+import { addContact } from '../redux/operations';
 
 export function App() {
   const contacts = useSelector(state => state.contacts.contacts);
   const filtre = useSelector(state => state.filtre);
-  // const isLoading = useSelector(state => state.contacts.isLoading);
-  // const error = useSelector(state => state.contacts.error);
   const dispatch = useDispatch();
 
   useEffect(() => {
